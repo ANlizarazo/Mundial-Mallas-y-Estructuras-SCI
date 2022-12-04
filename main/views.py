@@ -1,5 +1,5 @@
 from django.shortcuts import render 
 
-def holamundo(request):
+def login(request):
     context={}
-    return(request,'index.html',context)
+    return render(request,'index.html',context)
