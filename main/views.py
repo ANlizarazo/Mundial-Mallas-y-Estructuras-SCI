@@ -6,3 +6,10 @@ def login(request):
         'nombres':nombre
     }
     return render(request,'index.html',context)
+
+def productos(request):
+    titulo="Productos"
+    context={
+        'titulo':titulo
+    }
+    return render(request,'productos.html',context)
