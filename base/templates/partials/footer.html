@@ -1,0 +1,31 @@
+{% load static %}
+{% load bootstrap5 %}
+{% bootstrap_css %}
+
+<footer class="main-footer">
+    <div class="float-right d-none d-sm-inline">
+    {{ site.version }}
+    </div>
+    <strong>Copyright &copy; 2014-{{ site.time | date: '%Y' }} <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
+</footer>
+
+<!-- Footer -->
+<div class="container">
+    <footer class="d-flex flex-wrap justify-content-between align-items-center btn-success
+        py-3 my-4 border-top">
+        <div class="col-md-4 d-flex align-items-center">
+            </a>
+            <span class="text-muted">© 2022 Mundial de Mallas y Estructuras S.A.S</span>
+        </div>
+
+        <ul class="nav col-md-4 justify-content-end list-unstyled d-flex btn-success">
+            <li class="ms-3"><a class="text-muted" href="#"><svg class="bi"
+                        width="24" height="24"><use xlink:href="#twitter"></use></svg></a></li>
+            <li class="ms-3"><a class="text-muted" href="#"><svg class="bi"
+                        width="24" height="24"><use xlink:href="#instagram"></use></svg></a></li>
+            <li class="ms-3"><a class="text-muted" href="#"><svg class="bi"
+                        width="24" height="24"><use xlink:href="#facebook"></use></svg></a></li>
+        </ul>
+    </footer>
+</div>
+<!-- Footer -->
