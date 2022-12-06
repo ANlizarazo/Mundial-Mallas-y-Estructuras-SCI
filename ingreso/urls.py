@@ -1,5 +1,6 @@
 from django.urls import path
+from ingreso.views import ingreso
 
 urlpatterns = [
-    path(''),
+    path('',ingreso,name="ingreso"),
 ]
