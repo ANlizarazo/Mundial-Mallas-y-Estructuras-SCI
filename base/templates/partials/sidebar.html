@@ -1,12 +1,14 @@
 {% load static %}
+<!-- Theme style -->
+<link rel="stylesheet" href="/static/AdminLTE/css/adminlte.min.css">
 <!-- Main Sidebar Container -->
-<aside class="main-sidebar sidebar-dark-primary elevation-4">
+<aside class="main-sidebar sidebar-dark-success elevation-4 bg-gray-dark" name="sibebar">
     <!-- Brand Logo -->
     <a href="index3.html" class="brand-link">
-        <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo"
-            class="brand-image img-circle elevation-3"
+        <img src="/static/img/logoMallas.ico" alt="Mundial Mallas y Estructuras Logo"
+            class="brand-image img-circle elevation-3 "
             style="opacity: .8">
-        <span class="brand-text font-weight-light">AdminLTE 3</span>
+        <span class="brand-text font-weight-light"><tr></tr>SCI MME</tr></span>
     </a>
 
     <!-- Sidebar -->
@@ -14,12 +16,12 @@
         <!-- Sidebar user panel (optional) -->
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
             <div class="image">
-                <img src="dist/img/user2-160x160.jpg"
+                <img src="/static/img/perfil.jpg"
                     class="img-circle
                     elevation-2" alt="User Image">
             </div>
             <div class="info">
-                <a href="#" class="d-block">Alexander Pierce</a>
+                <a href="#" class="d-block">Lizeth Ojeda</a>
             </div>
         </div>
 
@@ -28,15 +30,17 @@
             <div class="input-group" data-widget="sidebar-search">
                 <input class="form-control form-control-sidebar"
                     type="search"
-                    placeholder="Search" aria-label="Search">
+                    placeholder="Buscar" aria-label="Search">
                 <div class="input-group-append">
                     <button class="btn btn-sidebar">
-                        <i class="fas fa-search fa-fw"></i>
+                        <i class="fas fa-search fa-fw">
+                            >
+                        </i>
                     </button>
                 </div>
             </div>
         </div>
-
+        <hr>
         <!-- Sidebar Menu -->
         <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column"
@@ -53,36 +57,6 @@
                             <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="./index.html" class="nav-link
-                                active">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Crear Cliente</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="./index2.html"
-                                class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Modificar Cliente</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="./index3.html"
-                                class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Buscar Cliente</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="./index2.html"
-                                class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Listado Clientes</p>
-                            </a>
-                        </li>
-                    </ul>
                 </li>
                 <!-- Modulo Compras-->
                 <li class="nav-item menu-open">
@@ -93,36 +67,6 @@
                             <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="./index.html" class="nav-link
-                                active">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Crear Compra</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="./index2.html"
-                                class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Modificar Compra</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="./index3.html"
-                                class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Buscar Compra</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="./index2.html"
-                                class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Listado Compras</p>
-                            </a>
-                        </li>
-                    </ul>
                 </li>
                 <!-- Modulo Productos-->
                 <li class="nav-item menu-open">
@@ -133,36 +77,6 @@
                             <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="./index.html" class="nav-link
-                                active">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Crear Producto</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="./index2.html"
-                                class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Modificar Producto</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="./index3.html"
-                                class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Buscar Producto</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="./index2.html"
-                                class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Listado Productos</p>
-                            </a>
-                        </li>
-                    </ul>
                 </li>
                 <!-- Modulo Proveedores-->
                 <li class="nav-item menu-open">
@@ -173,36 +87,6 @@
                             <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="./index.html" class="nav-link
-                                active">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Crear Proveedor</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="./index2.html"
-                                class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Modificar Proveedor</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="./index3.html"
-                                class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Buscar Proveedor</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="./index2.html"
-                                class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Listado Proveedores</p>
-                            </a>
-                        </li>
-                    </ul>
                 </li>
                 <!-- Modulo Servicios-->
                 <li class="nav-item menu-open">
@@ -213,36 +97,6 @@
                             <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="./index.html" class="nav-link
-                                active">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Crear Servicio</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="./index2.html"
-                                class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Modificar Servicio</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="./index3.html"
-                                class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Buscar Servicio</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="./index2.html"
-                                class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Listado Servicios</p>
-                            </a>
-                        </li>
-                    </ul>
                 </li>
                 <!-- Modulo Usuarios-->
                 <li class="nav-item menu-open">
@@ -253,36 +107,6 @@
                             <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="./index.html" class="nav-link
-                                active">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Crear Usuario</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="./index2.html"
-                                class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Modificar Usuario</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="./index3.html"
-                                class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Buscar usuario</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="./index2.html"
-                                class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Listado Usuarios</p>
-                            </a>
-                        </li>
-                    </ul>
                 </li>
                 <!-- Modulo Ventas-->
                 <li class="nav-item menu-open">
@@ -293,40 +117,13 @@
                             <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="./index.html" class="nav-link
-                                active">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Crear Venta</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="./index2.html"
-                                class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Modificar Venta</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="./index3.html"
-                                class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Buscar Venta</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="./index2.html"
-                                class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Listado Ventas</p>
-                            </a>
-                        </li>
-                    </ul>
                 </li>
-                <li class="nav-item">
+                <hr>
+                <hr>
+                <hr>
+                <li class="nav-item bg-gray">
                     <a href="pages/widgets.html" class="nav-link">
-                        <i class="nav-icon fas fa-th"></i>
+                        <i class="nav-icon fas fa-th "></i>
                         <p>
                             Cerrar Sesión
                         </p>
