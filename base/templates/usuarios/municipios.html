@@ -1,0 +1,110 @@
+{% extends 'partials/body.html' %}
+{% load static %}
+
+{% block stylesheet %}
+<!-- DataTables -->
+<!-- <link rel="stylesheet" href="{% static 'datatables-bs4/css/dataTables.bootstrap4.min.css">
+  <link rel="stylesheet" href="{% static 'datatables-responsive/css/responsive.bootstrap4.min.css">
+  <link rel="stylesheet" href="{% static 'datatables-buttons/css/buttons.bootstrap4.min.css"> -->
+{% endblock stylesheet %}
+
+
+{% block contenido %}
+<div class="card">
+    <div class="card-header">
+        <h3 class="card-title">DataTable with default features</h3>
+    </div>
+
+    <div class="card-body">
+        <div id="example1_wrapper" class="dataTables_wrapper dt-bootstrap4">
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <table id="example1" class="table table-bordered table-striped dataTable dtr-inline"
+                        aria-describedby="example1_info">
+                        <thead>
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Departamento</th>
+                                <th>Opciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            {% for municipio in municipios %}
+
+
+
+                            <tr class="odd">
+
+                                <td class="sorting_1 dtr-control" tabindex="0" style="">{{municipio.nombre}}</td>
+                                <td class="">{{municipio.departamento}}</td>
+                                <td><a href="" class="btn btn-succes fas fa-eye"></a></td>
+
+                            </tr>
+                            {% endfor %}
+
+                            <tr class="">
+                                <form action="" method='POST'>
+                                    {% csrf_token %}
+                                    <td class="sorting_1 dtr-control" tabindex="0" style="">
+                                        <input type="text" name="nombre" maxlength="90" required="" id="id_nombre">
+                                    </td>
+                                    <td><select name="departamento" required="" id="id_departamento">
+                                        <option value="" selected="">---------</option>
+                                      
+                                        
+                                        {% for departamento in departamentos  %}
+                                        <option value="{{departamento.id}}">{{departamento.nombre}}</option> 
+                                        {% endfor %}
+                                            
+                                      
+                                      </select></td>
+                                    
+                                    <td><input class="btn btn-success" type="submit" value="Agregar"></td>
+                                </form>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+</div>
+{% endblock contenido %}
+
+{% block javascript %}
+<!-- DataTables  & Plugins -->
+<script src="{% static 'datatables/jquery.dataTables.min.js' %}"></script>
+<script src="{% static 'datatables-bs4/js/dataTables.bootstrap4.min.js' %}"></script>
+<script src="{% static 'datatables-responsive/js/dataTables.responsive.min.js' %}"></script>
+<script src="{% static 'datatables-responsive/js/responsive.bootstrap4.min.js' %}"></script>
+<script src="{% static 'datatables-buttons/js/dataTables.buttons.min.js' %}"></script>
+<script src="{% static 'datatables-buttons/js/buttons.bootstrap4.min.js' %}"></script>
+<script src="{% static 'jszip/jszip.min.js' %}"></script>
+<script src="{% static 'pdfmake/pdfmake.min.js' %}"></script>
+<script src="{% static 'pdfmake/vfs_fonts.js' %}"></script>
+<script src="{% static 'datatables-buttons/js/buttons.html5.min.js' %}"></script>
+<script src="{% static 'datatables-buttons/js/buttons.print.min.js' %}"></script>
+<script src="{% static 'datatables-buttons/js/buttons.colVis.min.js' %}"></script>
+<!-- Page specific script -->
+<script>
+    $(function () {
+        $("#example1").DataTable({
+            "responsive": true, "lengthChange": false, "autoWidth": false,
+            "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+        }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+        $('#example2').DataTable({
+            "paging": true,
+            "lengthChange": false,
+            "searching": false,
+            "ordering": true,
+            "info": true,
+            "autoWidth": false,
+            "responsive": true,
+        });
+    });
+</script>
+{% endblock javascript %}

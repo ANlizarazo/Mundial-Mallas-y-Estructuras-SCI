@@ -1,6 +1,44 @@
-{% extends 'partials/body.hmtl' %}
-
+{{% extends 'partials/body.html' %}
 {% block contenido %}
-    <h1>Productos</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Nombre</th>
+      <th scope="col">Precio</th>
+      <th scope="col">Porcentaje Ganancia</th>
+      <th scope="col">Stock</th>
+
+      <th scope="col">Acciones</th>
+
+
+
+    </tr>
+  </thead>
+  <tbody>
+
+    {% for producto in productos %}
+    <tr>
+
+      {% if producto.estado != '3' %}
+      <td >{{producto.nombre}}</td>
+      <td>{{producto.precio}}</td>
+      <td>{{producto.porcentaje_ganancia}}</td>
+      <td>{{producto.stock}}</td>
+      <td><a class="btn btn-primary" href="{% url 'productos-editar' producto.id  %}"><i class="fas fa-edit"></i></a>
+        <a class="btn btn-danger" href="{% url 'productos-eliminar' producto.id  %}"><i class="fas fa-trash-alt"></i></a>
+      </td>
+      {% endif %}
+
+
+
+
+    </tr>
+    {% endfor %}
+
+
+
+  </tbody>
+</table>
 {% endblock contenido %}
     

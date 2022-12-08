@@ -1,0 +1,94 @@
+{% extends 'partials/body.html' %}
+{% load crispy_forms_tags %}
+{% block contenido %}
+
+<div class="row my-4">
+
+    {% if perms.usuarios.add_empresa %}
+
+
+    <div class="col-md-4">
+
+        <div class="border bg-white p-3">
+            <h4>Agregar Empresas</h4>
+            <hr>
+            <form action="" method="POST">
+                {% csrf_token %}
+                {{ form|crispy }}
+                <input type="hidden" name="modal-status" id="modal-status" value="{{modal_status}}">
+                <button class="btn btn-success btn-block" name="form-crear">Agregar Empresa</button>
+            </form>
+        </div>
+    </div>
+    {% endif %}
+
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Gestiona tus empresas</h3>
+            </div>
+
+            <div class="card-body">
+                <table id="tabla-general" class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>Nombres</th>
+                            <th>Municipio</th>
+                            <th>Nit</th>
+
+                            {% if perms.usuarios.delete_empresa or perms.usuarios.change_empresa %}
+                            <th>Acciones</th>
+                            {% endif %}
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for empresa in empresas %}
+                        <tr>
+                            <td>{{empresa.nombre}}</td>
+                            <td>{{empresa.municipio}}</td>
+                            <td>{{empresa.nit}}</td>
+
+                            {% if perms.usuarios.delete_empresa or perms.usuarios.change_empresa %}
+
+
+
+                            <td>
+                                <div class="row">
+
+                                    {% if perms.usuarios.change_empresa %}
+                                    <form action="" method="POST" class="col-4">
+                                        {% csrf_token %}
+                                        <input type="hidden" name="pk" value="{{empresa.id}}">
+                                        <button class="btn btn-primary btn-block" name="form-editar">
+                                            <i class="fas fa-edit"></i>
+                                        </button>
+                                    </form>
+                                    {% endif %}
+
+                                    {% if perms.usuarios.delete_empresa %}
+
+                                    <form action="" method="POST" class="col-4">
+                                        {% csrf_token %}
+                                        <input type="hidden" name="pk" value="{{empresa.id}}">
+                                        <button class="btn btn-danger btn-block" name="form-eliminar">
+                                            <i class="fas fa-trash-alt"></i>
+                                        </button>
+                                    </form>
+                                    {% endif %}
+
+                                </div>
+                            </td>
+                            {% endif %}
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+{% endblock contenido %}
